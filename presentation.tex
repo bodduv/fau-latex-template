@@ -1,0 +1,136 @@
+\documentclass[aspectratio=43,t]{beamer}
+%\documentclass[aspectratio=43,t,handout]{beamer}
+
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+%English version FAU Logo
+\usepackage[english]{babel}
+%German version FAU Logo
+%\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[backend=biber,sorting=none,doi=true,style=ieee]{biblatex}
+
+% Themes:
+%  - fau:          FAU theme
+%  - fau-med:      MedFak FAU theme
+%  - fau-nat:      NatFak FAU theme
+%  - fau-phil:     PhilFak FAU theme
+%  - fau-rw:       RWFak FAU theme
+%  - fau-rw-jura:  RWFak FB Jura FAU theme
+%  - fau-rw-wiso:  RWFak FB WISO FAU theme
+%  - fau-tf:       TechFak FAU theme
+%
+% Options:
+%  - image:        Cover image on title page
+%  - plain:        Plain title page
+%  - longtitle:    Title page layout for long title
+\usetheme[longtitle]{fau}
+
+% Enable semi-transparent animation preview
+\setbeamercovered{transparent}
+
+
+\lstset{%
+  language=C++,
+  tabsize=2,
+  basicstyle=\tt\scriptsize,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  numbers=left,
+  numbersep=0.5em,
+  numberstyle=\tt\tiny
+}
+
+
+\defbibheading{bibliography}{}
+\addbibresource[label=primary]{references.bib}
+\nocite{*}
+
+
+% Title, authors, and date
+\title[Short Title]{Long Title}
+\subtitle{Sub Title}
+\author[Name]{Name}
+% English version
+\institute[Chair of XYZ]{Chair of XYZ, Friedrich-Alexander University of Erlangen-Nuremberg}
+% German version
+%\institute[Lehrstuhl f\"ur XYZ]{Lehrstuhl f\"ur XYZ, Friedrich-Alexander-Universit\"at Erlangen-N\"urnberg}
+\date{\today}
+% Set additional logo (overwrites FAU seal)
+%\logo{\includegraphics[width=.15\textwidth]{themefau/art/xxx/xxx.pdf}}
+
+
+\begin{document}
+  % Title
+  \maketitle
+
+  { % Motivation
+    \setbeamertemplate{footline}{}
+    \begin{frame}[noframenumbering]{Motivation}
+      Some motivational example\dots
+    \end{frame}
+  }
+
+  { % Outline
+    \setbeamertemplate{footline}{}
+    \begin{frame}[noframenumbering]{Outline}
+      \tableofcontents
+    \end{frame}
+  }
+
+  % Body
+  \section{Lists}
+  \begin{frame}{Lists}
+    \begin{block}{List of Items}
+      \begin{itemize}
+        \item one
+        \item two
+        \item three
+        \item \dots
+      \end{itemize}
+    \end{block}
+
+    \pause
+
+    \begin{block}{Numbered List of Items}
+      \begin{enumerate}
+        \item<2-> one
+        \item<3-> two
+        \item<4-> three
+        \item<5-> \dots
+      \end{enumerate}
+    \end{block}
+  \end{frame}
+
+  \section{Listings}
+  \begin{frame}[fragile]{Listings}
+    \begin{lstlisting}[language=C++]
+#include <iostream>
+
+int main() {
+  std::cout << "Hello World!" << std::endl;
+  return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+  { % Questions?
+    \setbeamertemplate{footline}{}
+    \begin{frame}[c,noframenumbering]
+      \begin{center}
+        Thanks for listening.\\
+        {\bf Any questions?}
+      \end{center}
+    \end{frame}
+
+    % References
+    \section*{References}
+    \begin{frame}[allowframebreaks,noframenumbering]{References}
+      \printbibliography
+    \end{frame}
+  }
+\end{document}
+
